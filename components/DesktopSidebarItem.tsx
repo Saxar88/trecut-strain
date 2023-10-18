@@ -9,7 +9,7 @@ interface SidebarItemProps {
 	href: string;
 }
 
-const SidebarItem: React.FC<SidebarItemProps> = ({
+const DesktopSidebarItem: React.FC<SidebarItemProps> = ({
 	icon: Icon,
 	label,
 	active,
@@ -22,10 +22,12 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
 				"flex flex-row items-center h-auto w-full gap-x-4 py-1 text-md font-medium cursor-pointer hover:text-[#f3f1eb] transition",
 				active && "text-[#f3f1eb]"
 			)}>
-			<Icon size={26} />
-			<p className="w-full truncate">{label}</p>
+			<ul role="list" className="flex flex-col items-center space-y-1">
+				<Icon size={26} />
+				<p className="w-full truncate">{label}</p>
+			</ul>
 		</Link>
 	);
 };
 
-export default SidebarItem;
+export default DesktopSidebarItem;

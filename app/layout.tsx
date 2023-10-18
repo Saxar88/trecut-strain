@@ -3,6 +3,8 @@ import { Noto_Serif } from "next/font/google";
 
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
+import useRecord from "./hooks/useRecord";
+import RecordList from "@/components/RecordList";
 
 const notoSerif = Noto_Serif({ subsets: ["latin"] });
 
@@ -16,10 +18,15 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
+	const records = useRecord();
+
 	return (
 		<html lang="en">
 			<body className={notoSerif.className}>
-				<Sidebar>{children}</Sidebar>
+				<Sidebar>
+					<RecordList />
+					{children}
+				</Sidebar>
 			</body>
 		</html>
 	);

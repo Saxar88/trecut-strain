@@ -5,7 +5,7 @@ import { HiHome } from "react-icons/hi";
 
 import Box from "./Box";
 import Library from "./Library";
-import SidebarItem from "./SidebarItem";
+import DesktopSidebarItem from "./DesktopSidebarItem";
 
 const DesktopSidebar = () => {
 	const pathname = usePathname();
@@ -28,7 +28,7 @@ const DesktopSidebar = () => {
 			<Box>
 				<div className="flex flex-col gap-y-4 px-5 py-4">
 					{routes.map((item) => (
-						<SidebarItem key={item.label} {...item} />
+						<DesktopSidebarItem key={item.label} {...item} />
 					))}
 				</div>
 			</Box>
